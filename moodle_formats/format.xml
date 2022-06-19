@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+  <!-- question: 0  -->
+  <question type="category">
+    <category>
+      <text>$course$/top/kombinace1</text>
+    </category>
+    <info format="html">
+      <text></text>
+    </info>
+    <idnumber></idnumber>
+  </question>
+
+  <!-- question: 235277  -->
+  <question type="multichoice">
+    <name>
+      <text>Počet kombinací generovaných technikou Condition Coverage (CC) pro výraz v binární logice, kde n je počet vstupů, je</text>
+    </name>
+    <questiontext format="html">
+      <text>
+        <![CDATA[<p><span data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Počet kombinací generovaných technikou Condition Coverage (CC) pro výraz v binární logice, kde n je počet vstupů, je&quot;}" data-sheets-userformat="{&quot;2&quot;:12801,&quot;3&quot;:{&quot;1&quot;:0},&quot;12&quot;:0,&quot;15&quot;:&quot;\&quot;Calibri\&quot;, sans-serif&quot;,&quot;16&quot;:9}">Počet kombinací generovaných technikou Condition Coverage (CC) pro výraz v binární logice, kde n je počet vstupů, je</span><br></p>]]>
+      </text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>2.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <single>false</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <showstandardinstruction>1</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>Vaše odpověď je správná.</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>Vaše odpověď je částečně správná.</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Vaše odpověď je chybná.</text>
+    </incorrectfeedback>
+    <shownumcorrect />
+    <answer fraction="-33.33333" format="html">
+      <text>
+        <![CDATA[<p>2n</p>]]>
+      </text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="-33.33333" format="html">
+      <text>
+        <![CDATA[<p>n</p>]]>
+      </text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text>
+        <![CDATA[<p>2</p>]]>
+      </text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="-33.33333" format="html">
+      <text>
+        <![CDATA[<p>n/2</p>]]>
+      </text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <tags>
+      <tag>
+        <text>1</text>
+      </tag>
+      <tag>
+        <text>kombinace1</text>
+      </tag>
+    </tags>
+  </question>
+
+  <!-- question: 235276  -->
+  <question type="multichoice">
+    <name>
+      <text>Počet kombinací generovaných technikou Multiple Condition Coverage (MCC) pro výraz v binární logice, kde n je počet vstupů, je</text>
+    </name>
+    <questiontext format="html">
+      <text>
+        <![CDATA[<p>Počet kombinací generovaných technikou Multiple Condition Coverage (MCC) pro výraz v binární logice, kde n je počet vstupů, je<br></p>]]>
+      </text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text></text>
+    </generalfeedback>
+    <defaultgrade>2.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <single>false</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <showstandardinstruction>1</showstandardinstruction>
+    <correctfeedback format="html">
+      <text>Vaše odpověď je správná.</text>
+    </correctfeedback>
+    <partiallycorrectfeedback format="html">
+      <text>Vaše odpověď je částečně správná.</text>
+    </partiallycorrectfeedback>
+    <incorrectfeedback format="html">
+      <text>Vaše odpověď je chybná.</text>
+    </incorrectfeedback>
+    <shownumcorrect />
+    <answer fraction="-33.33333" format="html">
+      <text>
+        <![CDATA[<p>2n</p>]]>
+      </text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="-33.33333" format="html">
+      <text>
+        <![CDATA[<p>n</p>]]>
+      </text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="-33.33333" format="html">
+      <text>
+        <![CDATA[<p>n^2</p>]]>
+      </text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text>
+        <![CDATA[<p>2^n</p>]]>
+      </text>
+      <feedback format="html">
+        <text></text>
+      </feedback>
+    </answer>
+    <tags>
+      <tag>
+        <text>1</text>
+      </tag>
+      <tag>
+        <text>kombinace1</text>
+      </tag>
+    </tags>
+  </question>
+
+</quiz>

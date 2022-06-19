@@ -1,0 +1,299 @@
+openapi: 3.0.0
+info:
+  title: "ETMT API"
+  description: "API for the Exam Test Management Tool"
+  version: "1.0.0"
+paths:
+  /alive:
+    get:
+      summary: "GET alive"
+      operationId: "alive"
+      responses:
+        "200":
+          description: "OK"
+  /auth/checkUsernameAvailability:
+    get:
+      summary: "GET auth/checkUsernameAvailability"
+      operationId: "checkUsernameAvailability"
+      parameters:
+        - name: "username"
+          in: "query"
+          required: true
+          schema:
+            type: "string"
+      responses:
+        "200":
+          description: "OK"
+  /auth/login:
+    post:
+      summary: "POST auth/login"
+      operationId: "authenticateUser"
+      responses:
+        "200":
+          description: "OK"
+  /auth/me:
+    get:
+      summary: "GET auth/me"
+      operationId: "getCurrentUser"
+      responses:
+        "200":
+          description: "OK"
+  /auth/signup:
+    post:
+      summary: "POST auth/signup"
+      operationId: "registerUser"
+      responses:
+        "200":
+          description: "OK"
+  /categories:
+    post:
+      summary: "POST categories"
+      operationId: "addCategory"
+      responses:
+        "200":
+          description: "OK"
+  /categories/import/{parentId}:
+    post:
+      summary: "POST categories/import/{parentId}"
+      operationId: "importCategory"
+      parameters:
+        - name: "parentId"
+          in: "path"
+          required: true
+          schema:
+            type: "string"
+      responses:
+        "200":
+          description: "OK"
+  /categories/{id}:
+    get:
+      summary: "GET categories/{id}"
+      operationId: "getCategoryById"
+      parameters:
+        - name: "id"
+          in: "path"
+          required: true
+          schema:
+            type: "string"
+      responses:
+        "200":
+          description: "OK"
+    post:
+      summary: "POST categories/{id}"
+      operationId: "editCategory"
+      parameters:
+        - name: "id"
+          in: "path"
+          required: true
+          schema:
+            type: "string"
+      responses:
+        "200":
+          description: "OK"
+  /library:
+    get:
+      summary: "GET library"
+      operationId: "getLibraryItemsList"
+      responses:
+        "200":
+          description: "OK"
+  /library/move:
+    post:
+      summary: "POST library/move"
+      operationId: "moveItemInHierarchy"
+      parameters:
+        - name: "itemId"
+          in: "query"
+          required: true
+          schema:
+            type: "string"
+        - name: "newParentId"
+          in: "query"
+          required: true
+          schema:
+            type: "string"
+        - name: "position"
+          in: "query"
+          required: true
+          schema:
+            type: "number"
+            format: "int32"
+      responses:
+        "200":
+          description: "OK"
+  /library/{id}:
+    delete:
+      summary: "DELETE library/{id}"
+      operationId: "removeItemById"
+      parameters:
+        - name: "id"
+          in: "path"
+          required: true
+          schema:
+            type: "string"
+        - name: "deleteChildren"
+          in: "query"
+          required: true
+          schema:
+            type: "boolean"
+      responses:
+        "200":
+          description: "OK"
+  /questions:
+    post:
+      summary: "POST questions"
+      operationId: "addQuestion"
+      responses:
+        "200":
+          description: "OK"
+  /questions/{id}:
+    get:
+      summary: "GET questions/{id}"
+      operationId: "getQuestionById"
+      parameters:
+        - name: "id"
+          in: "path"
+          required: true
+          schema:
+            type: "string"
+      responses:
+        "200":
+          description: "OK"
+    post:
+      summary: "POST questions/{id}"
+      operationId: "editQuestion"
+      parameters:
+        - name: "id"
+          in: "path"
+          required: true
+          schema:
+            type: "string"
+      responses:
+        "200":
+          description: "OK"
+  /templates:
+    post:
+      summary: "POST templates"
+      operationId: "addTemplate"
+      responses:
+        "200":
+          description: "OK"
+  /templates/{id}:
+    get:
+      summary: "GET templates/{id}"
+      operationId: "getTemplateById"
+      parameters:
+        - name: "id"
+          in: "path"
+          required: true
+          schema:
+            type: "string"
+      responses:
+        "200":
+          description: "OK"
+    post:
+      summary: "POST templates/{id}"
+      operationId: "editTemplate"
+      parameters:
+        - name: "id"
+          in: "path"
+          required: true
+          schema:
+            type: "string"
+      responses:
+        "200":
+          description: "OK"
+  /variants/check:
+    get:
+      summary: "GET variants/check"
+      operationId: "checkSufficientQuestionsUnderCategory"
+      parameters:
+        - name: "categoryId"
+          in: "query"
+          required: true
+          schema:
+            type: "string"
+        - name: "points"
+          in: "query"
+          required: true
+          schema:
+            type: "number"
+            format: "int32"
+        - name: "count"
+          in: "query"
+          required: true
+          schema:
+            type: "number"
+            format: "int32"
+      responses:
+        "200":
+          description: "OK"
+  /variants/generate:
+    get:
+      summary: "GET variants/generate"
+      operationId: "generate"
+      parameters:
+        - name: "testTemplateId"
+          in: "query"
+          required: true
+          schema:
+            type: "string"
+      responses:
+        "200":
+          description: "OK"
+  /variants/pdf:
+    get:
+      summary: "GET variants/pdf"
+      operationId: "exportPDF"
+      parameters:
+        - name: "testVariantId"
+          in: "query"
+          required: true
+          schema:
+            type: "string"
+      responses:
+        "200":
+          description: "OK"
+  /variants/xml:
+    get:
+      summary: "GET variants/xml"
+      operationId: "exportXML"
+      parameters:
+        - name: "testVariantId"
+          in: "query"
+          required: true
+          schema:
+            type: "string"
+        - name: "parentCategoryName"
+          in: "query"
+          required: true
+          schema:
+            type: "string"
+      responses:
+        "200":
+          description: "OK"
+  /variants/{id}:
+    get:
+      summary: "GET variants/{id}"
+      operationId: "getTestVariantById"
+      parameters:
+        - name: "id"
+          in: "path"
+          required: true
+          schema:
+            type: "string"
+      responses:
+        "200":
+          description: "OK"
+    post:
+      summary: "POST variants/{id}"
+      operationId: "editTestVariant"
+      parameters:
+        - name: "id"
+          in: "path"
+          required: true
+          schema:
+            type: "string"
+      responses:
+        "200":
+          description: "OK"

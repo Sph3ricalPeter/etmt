@@ -1,0 +1,57 @@
+version: "3.8"
+services:
+  fe:
+    container_name: fe
+    build: etmt-fe
+    ports:
+      - "3001:3000"
+  jvm:
+    container_name: jvm
+    build: etmt-be
+    ports:
+      - "5050:5050"
+    depends_on:
+      - mongodb
+    environment:
+      - DB_USER=rootuser
+      - DB_PSW=rootpass
+      - DB_HOST=mongodb
+      - PDFLATEX_HOST=http://fa-pdflatex:8000 # within the docker network we have to use container name + the inner port
+  fa-pdflatex:
+    container_name: fa-pdflatex
+    hostname: fa-pdflatex
+    build: fa-pdflatex
+    ports:
+      - "5100:8000"
+    volumes:
+      - "./fa-pdflatex:/app"
+      - "./tex:/tmp/pdftex"
+    environment:
+      - LC_ALL=C.UTF-8
+      - LANG=C.UTF-8
+  mongodb:
+    container_name: mongodb
+    image: mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - "db:/db"
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=rootuser
+      - MONGO_INITDB_ROOT_PASSWORD=rootpass
+  mongo-express:
+    container_name: mongo-express
+    image: mongo-express
+    ports:
+      - "8081:8081"
+    environment:
+      - ME_CONFIG_MONGODB_ADMINUSERNAME=rootuser
+      - ME_CONFIG_MONGODB_ADMINPASSWORD=rootpass
+      - ME_CONFIG_MONGODB_SERVER=mongodb
+    restart: always
+volumes:
+  tex:
+  db: {}
+networks:
+  default:
+    name: mongodb_network

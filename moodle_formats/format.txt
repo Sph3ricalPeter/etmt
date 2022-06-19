@@ -1,0 +1,32 @@
+// question: 0  name: Switch category to $course$/top/mojeKategorie
+$CATEGORY: $course$/top/mojeKategorie
+
+
+// question: 235277  name: Moje otazka s vice odpovedmi
+// [tag:1] [tag:kombinace1]
+::Počet kombinací generovaných technikou Condition Coverage (CC) pro výraz v binární logice, kde n je počet vstupů, je::[html]<p><span data-sheets-value\="\{&quot;1&quot;\:2,&quot;2&quot;\:&quot;Počet kombinací generovaných technikou Condition Coverage (CC) pro výraz v binární logice, kde n je počet vstupů, je&quot;\}" data-sheets-userformat\="\{&quot;2&quot;\:12801,&quot;3&quot;\:\{&quot;1&quot;\:0\},&quot;12&quot;\:0,&quot;15&quot;\:&quot;\\&quot;Calibri\\&quot;, sans-serif&quot;,&quot;16&quot;\:9\}">Počet kombinací generovaných technikou Condition Coverage (CC) pro výraz v binární logice, kde n je počet vstupů, je</span><br></p>{
+	~%-33.33333%<p>2n</p>
+	~%-33.33333%<p>n</p>
+	~%100%<p>2</p>
+	~%-33.33333%<p>n/2</p>
+}
+
+
+// question: 235276  name: Počet kombinací generovaných technikou Multiple Condition Coverage (MCC) pro výraz v binární logice, kde n je počet vstupů, je
+// [tag:1] [tag:kombinace1]
+::Počet kombinací generovaných technikou Multiple Condition Coverage (MCC) pro výraz v binární logice, kde n je počet vstupů, je::[html]<p>Počet kombinací generovaných technikou Multiple Condition Coverage (MCC) pro výraz v binární logice, kde n je počet vstupů, je<br></p>{
+	~%-33.33333%<p>2n</p>
+	~%-33.33333%<p>n</p>
+	~%-33.33333%<p>n^2</p>
+	~%100%<p>2^n</p>
+}
+
+
+// question: 235275  name: Název otázky
+// [tag:1] [tag:myTag]
+:: Popis otázky {
+	~%-33.33333%<p>První odpověď</p>
+	~%-33.33333%<p>Druhá odpověď</p>
+	~%-33.33333%<p>Třetí odpověď</p>
+	~%100%<p>Čtvrtá, správná odpověď</p>
+}

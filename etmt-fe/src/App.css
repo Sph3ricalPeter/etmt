@@ -1,0 +1,43 @@
+@import "~antd/dist/antd.css";
+
+.site-layout-background {
+  background: #fff;
+}
+
+.logo {
+  float: left;
+  width: 120px;
+  text-align: center;
+  color: rgb(255, 255, 255);
+  font-size: 18px;
+  font-weight: 100;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+.itemInfo p {
+  padding: 5px 15px;
+}
+
+.errorMsg {
+  padding: 5px 15px;
+  border: 1px solid #ff4d4f;
+  background-color: #fff5f5;
+  border-radius: 3px;
+  color: #ff4d4f;
+}
+
+.warnMsg {
+  padding: 5px 15px;
+  border: 1px solid #ffa94d;
+  background-color: #fff8f1;
+  border-radius: 3px;
+  color: #ffa94d;
+}
+
+.infoMsg {
+  padding: 5px 15px;
+  border: 1px solid #1890ff;
+  border-radius: 5px;
+  background: #f6faff;
+  color: #1890ff;
+}
