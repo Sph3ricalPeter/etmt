@@ -1,32 +1,29 @@
-## Nástroj pro zadávání zkouškových testů
+## Exam Test Management Tool
 
-Vedoucí: Ing. Karel Frajták, Ph.D.
+Exam Test Management Tool (ETMT in short) simplifies the proces of creating exam tests in general, with a primary focus on [Moodle](https://moodle.org/).
 
-### Popis
+ETMT is a standalone web application deployed in Docker and allows:
 
-Nástroj pomůže při organizaci zkouškových testů. Vyučující bude moci zadávat otázky (volný text, jedna odpověď je
-správna, více odpovědí je správných, apod.), seskupovat je dle definované kategorie, označovat štítky, definovat počet
-bodů za správně zodpovězenou otázku.
-Nástroj sestaví test dle zadaného celkového počtu bodů za všechny otázky, celkového počtu otázek, kategorií a počtu
-otázek z každé kategorie.
-Systém zaručí minimální opakování v testech zadávaných v jednom zkouškovém období. Nástroj upozorní obsluhu na
-nutnost doplnění otázek do zásobníku otázek v případě, že nelze další varianty testu sestavit.
-Test bude pak možné vyexportovat do formátu pro import do Moodle nebo do PDF pro přímý tisk.
-Vytvořený nástroj vhodným způsobem otestujte.
+### 1. Creating a library of questions
+  * short answer, single-choice and multiple choice questions are currently supported
+### 2. Importing categories and questions from Moodle via XML
+### 3. Creating exam test templates
+Exam test templates consist of topics which specify:
+  *  number of questions from a given category
+  *  number of questions with a cartain amount of points as a reward
+  *  a combination of the two
+### 4. generating exam test variants using different strategies
+   *  UNIQUE strategy creates completely different test variants (with no overlap of questions)
+   *  COMPROMISE strategy uses AETG system from Pairwise testing to generate combinations with all pairs of questions, reducing the overlap of questions between test variants
+### 5. exporting generated test variants 
+   *  to XML format for import in Moodle
+   *  to PDF for print
 
-### Výstupy
-- práce ve formátu PDF, LaTeX zdroj i vygenerované PDF je umístěno ve složce `/thesis`
-- webová aplikace umožňující tvorbu zkouškových testů pro nahrání do moodle, je tvořena:
-  - `/etmt-be` - serverová aplikace, Java, Maven
-  - `/etmt-fe` - klientská aplikace, React.js
-  - `/fa-pdflatex` - PdfLatex služba, FastAPI
+## Usage
+- `Docker Desktop 4.7.1` or newer is required
+- app can be started by running `docker compose -f "docker-compose.yml" up -d --build` in the `etmt` root folder
+- GUI can be found at http://localhost:3001
 
-## Návod ke spuštění aplikace
-- je třeba mít nainstalovaný `Docker Desktop 4.7.1` či novější
-- aplikace se sestaví příkazem `docker compose -f "docker-compose.yml" up -d --build` v kořenovém adresáři
-- během několika minut by na http://localhost:3001 měla běžet aplikace - obrazovka Login (při prvním spuštění může načítání trvat déle)
-
-# Rozcestník
-- [Závěrečná zpráva semestrálního projektu v LaTeX Overleaf](https://www.overleaf.com/read/hgphgsrqpzkc)
-- [Gitlab repozitář aplikace](https://gitlab.fel.cvut.cz/jezekpe6/sem_pro)
-- [DrawIO diagramy](https://drive.google.com/file/d/1jXgTX40HRlTDFJGnaNFyr2LOSK9yCICd/view?usp=sharing)
+# Links
+- [App Diagrams](https://drive.google.com/file/d/1jXgTX40HRlTDFJGnaNFyr2LOSK9yCICd/view?usp=sharing)
+- [Original repo](https://gitlab.fel.cvut.cz/jezekpe6/sem_pro)
